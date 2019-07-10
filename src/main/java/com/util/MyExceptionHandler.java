@@ -27,9 +27,9 @@ public class MyExceptionHandler {
         return RestResult.FAIL_REST_RESULT(myE.getErrorCode());
     }
 
-    @ExceptionHandler(value = UnexpectedTypeException.class)
-    public RestResult unexpectedTypeExeFunction(UnexpectedTypeException upe){
-        return RestResult.FAIL_REST_RESULT(upe.getMessage());
-    }
+    //@ExceptionHandler(value = UnexpectedTypeException.class)
+   // public RestResult unexpectedTypeExeFunction(UnexpectedTypeException upe){
+    //    return RestResult.FAIL_REST_RESULT(upe.getMessage());
+    //}
 
 }

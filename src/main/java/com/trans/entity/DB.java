@@ -28,7 +28,7 @@ public class DB implements XmlInterface{
     @NotEmpty(message = "000_000")
     @XmlElement(name = "database")
     private String dbs;
-    @NotEmpty(message = "000_000")
+    //@NotEmpty(message = "000_000")
     private int port;
     @NotEmpty(message = "000_000")
     private String username;
