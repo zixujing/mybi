@@ -1,0 +1,174 @@
+<!--/* Workaround for bug https://youtrack.jetbrains.com/issue/IDEA-132738 -->
+<!--@thymesVar id="msg" type="String"-->
+<!--*/-->
+
+
+
+<html lang="zh-cn" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 告诉浏览器响应屏幕宽度 -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+
+
+
+
+</head>
+<style>
+
+
+    /* Basic Grey */
+    .basic-grey {
+        margin-left:auto;
+        margin-right:auto;
+        max-width: 1000px;
+        /*background: #F7F7F7;*/
+        padding: 25px 15px 25px 10px;
+        font: 12px Georgia, "Times New Roman", Times, serif;
+        color: #888;
+        text-shadow: 1px 1px 1px #FFF;
+        border:0px solid #E4E4E4;
+    }
+    .basic-grey h1 {
+        font-size: 25px;
+        padding: 0px 0px 10px 40px;
+        /*display: block;*/
+        border-bottom:1px solid #E4E4E4;
+        margin: -10px -15px 30px -10px;;
+        color: #888;
+    }
+    .basic-grey h1>span {
+        /*display: block;*/
+        font-size: 11px;
+    }
+    .basic-grey label {
+        /*display: block;*/
+        margin: 0px;
+    }
+    .basic-grey label>span {
+        float: left;
+        width: 20%;
+        text-align: right;
+        padding-right: 10px;
+        margin-top: 10px;
+        color: #888;
+    }
+    .basic-grey input[type="text"], .basic-grey input[type="email"], .basic-grey textarea, .basic-grey select {
+        border: 1px solid #DADADA;
+        color: #888;
+        height: 30px;
+        margin-bottom: 16px;
+        margin-right: 6px;
+        margin-top: 2px;
+        outline: 0 none;
+        padding: 3px 3px 3px 5px;
+        width: 20%;
+        font-size: 12px;
+        line-height:15px;
+        box-shadow: inset 0px 1px 4px #ECECEC;
+        -moz-box-shadow: inset 0px 1px 4px #ECECEC;
+        -webkit-box-shadow: inset 0px 1px 4px #ECECEC;
+    }
+    .basic-grey textarea{
+        padding: 5px 3px 3px 5px;
+    }
+    .basic-grey select {
+        background: #FFF url('/static/common/img/down-arrow.jpg') no-repeat right;
+        background: #FFF url('/static/common/img/down-arrow.jpg') no-repeat right;
+        appearance:none;
+        -webkit-appearance:none;
+        -moz-appearance: none;
+        text-indent: 0.01px;
+        text-overflow: '';
+        width: 20%;
+        height: 35px;
+        line-height: 25px;
+    }
+    .basic-grey textarea{
+        height:100px;
+    }
+    .basic-grey .button {
+        background: #E27575;
+        border: none;
+        padding: 10px 25px 10px 25px;
+        color: #FFF;
+        box-shadow: 1px 1px 5px #B6B6B6;
+        border-radius: 3px;
+        text-shadow: 1px 1px 1px #9E3F3F;
+        cursor: pointer;
+    }
+    .basic-grey .button:hover {
+        background: #CF7A7A
+    }
+    .h1-class
+    {
+        text-align:center;
+    }
+
+    .div-class
+    {
+        width: 90%;
+        height: 90%;
+        margin: 0px auto;
+        margin-bottom:20px;
+        border:0px solid #C9D9EE;
+
+    }
+</style>
+<body>
+
+
+
+<h1 class="h1-class">全县农产品销售概况</h1>
+
+    <form id="" action="/mybi/datadetail" method="get" class="basic-grey">
+        <label>  时间段 ：</label>
+        <select name="timerange" id="time_range">
+            <option value ="Last day" th:selected="${timerange=='Last day'}">昨天</option>
+            <option value ="Last week" th:selected="${timerange=='Last week'}">一周</option>
+            <option value="Last month" th:selected="${timerange=='Last month'}">一月</option>
+            <option value ="Last quarter" th:selected="${timerange=='Last quarter'}">一季</option>
+            <option value="Last year" th:selected="${timerange=='Last year'}">一年</option>
+            <option value ="Last 2 days" th:selected="${timerange=='Last 2 days'}">二日</option>
+            <option value ="Last 3 days" th:selected="${timerange=='Last 3 days'}">三日</option>
+            <option value ="Last 4 days" th:selected="${timerange=='Last 4 days'}">四日</option>
+            <option value ="Last 5 days" th:selected="${timerange=='Last 5 days'}">五日</option>
+            <option value ="Last 6 days" th:selected="${timerange=='Last 6 days'}">六日</option>
+
+        </select>
+
+        <label>  返回量 ：</label>
+        <select name="rowlimit" id="row_limit">
+            <option value ="10" th:selected="${rowlimit=='10'}">10</option>
+            <option value ="50" th:selected="${rowlimit=='50'}">50</option>
+            <option value="100" th:selected="${rowlimit=='100'}">100</option>
+            <option value ="250" th:selected="${rowlimit=='250'}">250</option>
+            <option value ="500" th:selected="${rowlimit=='500'}">500</option>
+            <option value="1000" th:selected="${rowlimit=='1000'}">1000</option>
+            <option value ="5000" th:selected="${rowlimit=='5000'}">5000</option>
+            <option value="10000" th:selected="${rowlimit=='10000'}">10000</option>
+            <option value ="50000" th:selected="${rowlimit=='50000'}">50000</option>
+            <option value="100000" th:selected="${rowlimit=='100000'}">100000</option>
+        </select>
+        <label>  图形形式：</label>
+        <select name="pic" id="select_pic">
+        <option value ="hour" th:selected="${pic=='hour'}">小时</option>
+        <option value ="day" th:selected="${pic=='day'}">日</option>
+        <option value ="line" th:selected="${pic=='line'}">线性</option>
+    </select>
+        <input  class="button" type="submit" value="确定" />
+
+    </form>
+
+
+<div class="div-class">
+<iframe
+        id="myframe" name="myframe" width="100%" scrolling="no" frameborder="0" height="100%"
+        th:src='@{/mybi/mydatadetail(rowlimit=${rowlimit},timerange=${timerange},pic=${pic})}'
+>
+</iframe>
+</div>
+</body>
+</html>
