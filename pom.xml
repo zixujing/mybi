@@ -58,7 +58,7 @@
         <!--commons.text-->
         <commons.text.version>1.6</commons.text.version>
         <!--guava-->
-        <google.guava.version>27.0.1-jre</google.guava.version>
+        <google.guava.version>29.0-jre</google.guava.version>
         <!--jackson-->
         <jackson.version>2.9.8</jackson.version>
         <!--commons-io-->
