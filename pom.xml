@@ -62,7 +62,7 @@
         <!--jackson-->
         <jackson.version>2.9.8</jackson.version>
         <!--commons-io-->
-        <commons-io.version>2.6</commons-io.version>
+        <commons-io.version>2.7</commons-io.version>
         <!--jackson-mapper-asl-->
         <jackson-mapper-asl.version>1.9.13</jackson-mapper-asl.version>
         <!--UserAgentUtils-->
