@@ -70,7 +70,7 @@
         <!--json-lib-->
         <json-lib.version>2.4</json-lib.version>
         <!--httpclient-->
-        <httpclient.version>4.5.6</httpclient.version>
+        <httpclient.version>4.5.13</httpclient.version>
         <!--oshi-->
         <oshi.version>3.9.1</oshi.version>
     </properties>
